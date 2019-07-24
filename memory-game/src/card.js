@@ -10,7 +10,7 @@ function Card(props) {
 
   return (
     <div className="card">
-      <button onClick={() => props.handleClick(props.id, props.di)}><img src={props.flipped ? props.backgroundImage : props.back} height="80px" width='80px'></img></button>
+      <button onClick={() => props.handleClick(props.id, props.di)}><img src={props.flipped ? props.backgroundImage : props.back} height="120px" width='120px'></img></button>
     </div>
   );
 }
