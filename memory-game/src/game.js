@@ -5,7 +5,7 @@ function Game(props) {
   return (
     <div className="game">
       <h1>Game Container</h1>
-      <Cards handleClick={(id) => props.handleClick(id)} props={props} />
+      <Cards handleClick={(itemId, id) => props.handleClick(itemId, id)} props={props} />
     </div>
   );
 }

@@ -5,7 +5,7 @@ function ScoreContainer(props) {
   return (
     <div className="score-container">
     <h1>Score Container </h1>
-    <Score shuffle={props.shuffle}/>
+    <Score score={props.score} shuffle={props.shuffle}/>
     </div>
   );
 }
