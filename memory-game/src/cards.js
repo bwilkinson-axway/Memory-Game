@@ -1,33 +1,15 @@
 import React from 'react';
 import Card from './card';
 
-function Cards() {
+function Cards({props}) {
+ 
   return (
     <div className="cards">
-    <div className='row'>
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    </div>
-    <div className='row'>
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    </div>
-    <div className='row'>
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    </div>
-    <div className='row'>
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    </div>
+   {console.log(props.props.length)}
+   {props.props.map((card)=>
+    <Card key={card.id} backgroundImage={card.picture}/>)}
+    
+    
     </div>
   );
 }

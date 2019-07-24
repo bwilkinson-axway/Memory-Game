@@ -1,11 +1,11 @@
 import React from 'react';
 import Cards from './cards';
 
-function Game() {
+function Game(props) {
   return (
     <div className="game">
       <h1>Game Container</h1>
-      <Cards />
+      <Cards props={props} />
     </div>
   );
 }
