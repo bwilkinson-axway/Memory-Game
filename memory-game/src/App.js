@@ -14,6 +14,7 @@ class App extends Component {
         matched: false,
         itemId:1,
         flipped: false,
+        disabled:true,
       },
       {
         id: uuid.v4(),
@@ -22,6 +23,7 @@ class App extends Component {
         matched: false,
         itemId:1,
         flipped: false,
+        disabled:true,
       },
       {
         id: uuid.v4(),
@@ -30,6 +32,7 @@ class App extends Component {
         matched: false,
         itemId:2,
         flipped: false,
+        disabled:true,
       },
       {
         id: uuid.v4(),
@@ -38,6 +41,7 @@ class App extends Component {
         matched: false,
         itemId:2,
         flipped: false,
+        disabled:true,
       },
       {
         id: uuid.v4(),
@@ -46,6 +50,7 @@ class App extends Component {
         matched: false,
         itemId:3,
         flipped: false,
+        disabled:true,
       },
       {
         id: uuid.v4(),
@@ -54,6 +59,7 @@ class App extends Component {
         matched: false,
         itemId:3,
         flipped: false,
+        disabled:true,
       },
       {
         id: uuid.v4(),
@@ -62,6 +68,7 @@ class App extends Component {
         matched: false,
         itemId:4,
         flipped: false,
+        disabled:true,
       },
       {
         id: uuid.v4(),
@@ -70,6 +77,7 @@ class App extends Component {
         matched: false,
         itemId:4,
         flipped: false,
+        disabled:true,
       },
       {
         id: uuid.v4(),
@@ -78,6 +86,7 @@ class App extends Component {
         matched: false,
         itemId:5,
         flipped: false,
+        disabled:true,
       },
       {
         id: uuid.v4(),
@@ -86,6 +95,7 @@ class App extends Component {
         matched: false,
         itemId:5,
         flipped: false,
+        disabled:true,
       },
       {
         id: uuid.v4(),
@@ -94,6 +104,7 @@ class App extends Component {
         matched: false,
         itemId:6,
         flipped: false,
+        disabled:true,
       },
       {
         id: uuid.v4(),
@@ -102,6 +113,7 @@ class App extends Component {
         matched: false,
         itemId:6,
         flipped: false,
+        disabled:true,
       },
       {
         id: uuid.v4(),
@@ -110,6 +122,7 @@ class App extends Component {
         matched: false,
         itemId:7,
         flipped: false,
+        disabled:true,
       },
       {
         id: uuid.v4(),
@@ -118,6 +131,7 @@ class App extends Component {
         matched: false,
         itemId:7,
         flipped: false,
+        disabled:true,
       },
       {
         id: uuid.v4(),
@@ -126,6 +140,7 @@ class App extends Component {
         matched: false,
         itemId:8,
         flipped: false,
+        disabled:true,
       },
       {
         id: uuid.v4(),
@@ -134,6 +149,7 @@ class App extends Component {
         matched: false,
         itemId:8,
         flipped: false,
+        disabled:true,
       }
 
     ],
@@ -141,6 +157,7 @@ class App extends Component {
     clicked: 0,
     score: 0,
     matchedPairs:0,
+    disabled:true,
   }
 
 
@@ -184,14 +201,20 @@ class App extends Component {
       }
     }
   }
+setDisabled=()=>{
+  this.setState({ 
+    disabled: false 
+  });
+}
+
 
   render(){
     //let shuffleState;
   return (
     <div className="App">
         {console.log(this.state.cards)}
-        <Game handleClick={(itemId, id) => this.handleClick(itemId, id)} props={this.state.cards}/>
-        <ScoreContainer score={this.state.score} shuffle={this.state.cards} matchedPairs={this.state.matchedPairs}/>
+        <Game handleClick={(itemId, id) => this.handleClick(itemId, id)} props={this.state.cards} disabled={this.state.disabled}/>
+       <ScoreContainer setDisabled={this.setDisabled} score={this.state.score} shuffle={this.state.cards} matchedPairs={this.state.matchedPairs}/>
     </div>
   );
 }}
