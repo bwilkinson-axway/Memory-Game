@@ -1,28 +1,57 @@
+html,
+body {
+  background-color: grey;
+}
+
 .App {
   text-align: center;
   display: flex;
 }
 
 .game {
-  background-color: green;
   width: 70vw;
 }
 
 .score-container {
-  background-color: red;
   width: 30vw;
 }
 
 .score {
-  background-color: orange;
+  background-color: #FF7E2B;
+  color: white;
+  padding-top: 2em;
+  border-radius: 30px;
+  margin-top: 1em;
 }
 
 .cards {
-  background-color: blue;
   display: flex;
 }
 
 .card {
   width: 10vw;
   margin: 3.75vw;
+}
+
+#logo {
+  width: 20vw;
+}
+
+.score button {
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.score h1 {
+  border: solid white;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+  border-radius: 10px;
+}
+
+.card button {
+  border-radius: 10px;
+  padding: 0;
 }
