@@ -11,7 +11,7 @@ class Score extends Component {
   }
 
   startTimer() {
-
+   this.props.setDisabled()
     this.timer = setInterval(
       () =>
         this.setState({
@@ -26,9 +26,8 @@ class Score extends Component {
     return (
       <div className="score">
         <h1>Score: {this.props.score * 50}</h1>
-        <h1>Timer: {this.state.time} seconds</h1>{console.log(this.props.matchedPairs)}
-        {(this.props.matchedPairs === 8) ?  clearInterval(this.timer): null}
-        {console.log(this.state.time)}
+        <h1>Timer: {this.state.time} seconds</h1>
+        {this.props.matchedPairs === 8 ? clearInterval(this.timer) : null}
         <button onClick={this.startTimer}>New Game</button>
       </div>
     );
