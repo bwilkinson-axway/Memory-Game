@@ -13,18 +13,17 @@ class Score extends Component {
     this.timer= setInterval(()=> this.setState({
       time: this.state.time +1
     }), 1000)
-    
+
   }
 
 
-  
   render(){
+    console.log(this.props)
   return (
     <div className="score">
     <h1>Score: 10000</h1>
-    <h1>Timer: {this.state.time} seconds</h1>
-    <button>New Game</button>
-    <button onClick={this.startTimer}>start</button>{console.log(this.state.time)}
+    <h1>Timer: {this.state.time} seconds</h1>{console.log(this.state.time)}
+    <button onClick={this.startTimer}>New Game</button>
     </div>
   );
 }

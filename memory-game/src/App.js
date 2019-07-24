@@ -121,8 +121,8 @@ class App extends Component {
   return (
     <div className="App">
         {console.log(this.state.cards)}
-        <Game props={this.state.cards} />
-        <ScoreContainer />
+        <Game props={this.shuffleState}/>
+        <ScoreContainer shuffle={this.shuffleState}/>
     </div>
   );
 }}
