@@ -191,7 +191,7 @@ class App extends Component {
     <div className="App">
         {console.log(this.state.cards)}
         <Game handleClick={(itemId, id) => this.handleClick(itemId, id)} props={this.state.cards}/>
-        <ScoreContainer score={this.state.score} shuffle={this.state.cards}/>
+        <ScoreContainer score={this.state.score} shuffle={this.state.cards} matchedPairs={this.state.matchedPairs}/>
     </div>
   );
 }}
