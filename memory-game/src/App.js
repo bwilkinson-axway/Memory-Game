@@ -126,7 +126,7 @@ class App extends Component {
     } else {
       if (id === this.state.clicked) {
         this.setState({
-          cards: this.state.cards.map(card => card.itemId === id ? {...card, matched: true} : {...card}),
+          cards: this.state.cards.map(card => card.itemId === id ? {...card, matched: true, picture: 'https://images.vexels.com/media/users/3/157931/isolated/preview/604a0cadf94914c7ee6c6e552e9b4487-curved-check-mark-circle-icon-by-vexels.png'} : {...card}),
           clicked: 0
         })
 
