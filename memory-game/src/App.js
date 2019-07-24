@@ -140,6 +140,7 @@ class App extends Component {
 
     clicked: 0,
     score: 0,
+    matchedPairs:0,
   }
 
 
@@ -171,7 +172,8 @@ class App extends Component {
         this.setState({
           cards: this.state.cards.map(card => card.itemId === itemId ? {...card, flipped: true, matched: true, picture: 'https://images.vexels.com/media/users/3/157931/isolated/preview/604a0cadf94914c7ee6c6e552e9b4487-curved-check-mark-circle-icon-by-vexels.png'} : {...card}),
           clicked: 0,
-          score: this.state.score + 1
+          score: this.state.score + 1,
+          matchedPairs: this.state.matchedPairs +1
         })
       } else {
         console.log('else')
