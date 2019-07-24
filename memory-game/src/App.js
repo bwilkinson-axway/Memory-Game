@@ -106,7 +106,9 @@ class App extends Component {
         itemId:8
       }
 
-    ]
+    ],
+
+    clicked: 0,
   }
 
    shuffleState = this.state.cards.sort(function(){
@@ -114,14 +116,30 @@ class App extends Component {
     return 0.5 - Math.random()
   })
 
+  handleClick = (id) => {
+    console.log(id)
+    console.log(this.state)
+    if (this.state.clicked === 0) {
+      this.setState({
+        clicked: id
+      })
+    } else {
+      if (id === this.state.clicked) {
+        this.setState({
+          cards: this.state.cards.map(card => card.itemId === id ? {...card, matched: true} : {...card}),
+          clicked: 0
+        })
 
+      }
+    }
+  }
 
   render(){
     //let shuffleState;
   return (
     <div className="App">
         {console.log(this.state.cards)}
-        <Game props={this.shuffleState}/>
+        <Game handleClick={(id) => this.handleClick(id)} props={this.shuffleState}/>
         <ScoreContainer shuffle={this.shuffleState}/>
     </div>
   );
