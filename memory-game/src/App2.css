@@ -1,0 +1,29 @@
+.App {
+  text-align: center;
+  display: flex;
+}
+
+.game {
+  background-color: green;
+  width: 70vw;
+}
+
+.score-container {
+  background-color: red;
+  width: 30vw;
+}
+
+.score {
+  background-color: orange;
+}
+
+.cards {
+  background-color: blue;
+  display: flex;
+}
+
+.card {
+  background-color: purple;
+  width: 10vw;
+  margin: 3.75vw;
+}
