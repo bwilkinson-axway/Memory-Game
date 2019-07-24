@@ -202,8 +202,8 @@ class App extends Component {
     }
   }
 setDisabled=()=>{
-  this.setState({ 
-    disabled: false 
+  this.setState({
+    disabled: false
   });
 }
 
