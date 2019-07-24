@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './App2.css';
+import Game from './game'
+import ScoreContainer from './scorecontainer'
 import uuid from 'uuid';
 import { throws } from 'assert';
 
@@ -103,26 +105,24 @@ class App extends Component {
         matched: false,
         itemId:8
       }
-  
+
     ]
   }
 
    shuffleState = this.state.cards.sort(function(){
     console.log('im running')
     return 0.5 - Math.random()
-  }) 
-  
+  })
+
 
 
   render(){
     let shuffleState;
   return (
     <div className="App">
-      <header className="App-header">
         {console.log(this.state.cards)}
-       
-     
-      </header>
+        <Game />
+        <ScoreContainer />
     </div>
   );
 }}
