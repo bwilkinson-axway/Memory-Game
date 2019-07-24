@@ -110,7 +110,7 @@ class App extends Component {
   }
 
    shuffleState = this.state.cards.sort(function(){
-    console.log('im running')
+    console.log('a')
     return 0.5 - Math.random()
   })
 
