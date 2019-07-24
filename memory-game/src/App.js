@@ -117,7 +117,7 @@ class App extends Component {
 
 
   render(){
-    let shuffleState;
+    //let shuffleState;
   return (
     <div className="App">
         {console.log(this.state.cards)}
