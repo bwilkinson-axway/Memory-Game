@@ -26,7 +26,7 @@ class Score extends Component {
     console.log(this.props);
     return (
       <div className="score">
-        <h1>Score: {this.props.score * 50}</h1>
+        <h1>🐾 Score: {this.props.score * 50} 🐾</h1>
         <h1>Timer: {this.state.time} seconds</h1>
         {this.props.matchedPairs === 8 ? clearInterval(this.timer) : null}
         <button onClick={this.startTimer}>START</button>
