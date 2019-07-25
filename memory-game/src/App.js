@@ -158,6 +158,7 @@ class App extends Component {
     score: 0,
     matchedPairs:0,
     disabled:true,
+    clickedId:0
   }
 
 
@@ -179,10 +180,11 @@ class App extends Component {
     if (this.state.clicked === 0) {
       this.setState({
         clicked: itemId,
+        clickedId: id,
         cards: this.state.cards.map(card => card.id === id ? {...card, flipped: true} : {...card})
       })
     } else {
-      if (itemId === this.state.clicked) {
+      if (itemId === this.state.clicked  && id !== this.state.clickedId) {
         this.setState({
           cards: this.state.cards.map(card => card.itemId === itemId ? {...card, flipped: true} : {...card})
         })
