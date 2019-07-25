@@ -30,7 +30,7 @@ class Score extends Component {
         <h1>Timer: {this.state.time} seconds</h1>
         {this.props.matchedPairs === 8 ? clearInterval(this.timer) : null}
         <button onClick={this.startTimer}>START</button>
-        <Celebrate time={this.state.time} score={this.props.score * 50} />
+        {this.props.matchedPairs === 8 && <Celebrate time={this.state.time} score={this.props.score * 50} />}
       </div>
     );
   }
