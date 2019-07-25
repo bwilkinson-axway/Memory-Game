@@ -68,7 +68,7 @@ class App extends Component {
         matched: false,
         itemId:4,
         flipped: false,
-        disabled:true,
+        disabled:false,
       },
       {
         id: uuid.v4(),
@@ -189,15 +189,16 @@ class App extends Component {
           cards: this.state.cards.map(card => card.itemId === itemId ? {...card, flipped: true} : {...card})
         })
         this.setState({
-          cards: this.state.cards.map(card => card.itemId === itemId ? {...card, flipped: true, matched: true, picture: 'https://images.vexels.com/media/users/3/157931/isolated/preview/604a0cadf94914c7ee6c6e552e9b4487-curved-check-mark-circle-icon-by-vexels.png'} : {...card}),
+          cards: this.state.cards.map(card => card.itemId === itemId ? {...card, disabled:true, flipped: true, matched: true, picture: 'https://images.vexels.com/media/users/3/157931/isolated/preview/604a0cadf94914c7ee6c6e552e9b4487-curved-check-mark-circle-icon-by-vexels.png'} : {...card}),
           clicked: 0,
-          score: this.state.score + 1,
+          score: this.state.score + 5,
           matchedPairs: this.state.matchedPairs +1
         })
       } else {
         console.log('else')
         this.setState({
-          cards: this.state.cards.map(card => card.id === id ? {...card, flipped: true} : {...card})
+          cards: this.state.cards.map(card => card.id === id ? {...card, flipped: true} : {...card}),
+          score: this.state.score -1
         })
         setTimeout(() => this.timeout(), 1000)
       }
@@ -205,7 +206,7 @@ class App extends Component {
   }
 setDisabled=()=>{
   this.setState({
-    disabled: false
+    cards: this.state.cards.map(card => card.disabled===true ? {...card, disabled: false} : {...card} )
   });
 }
 
