@@ -8,7 +8,7 @@ class Celebrate extends Component {
     console.log(this.props);
     return (
       <div className="celebrate">
-        <h1> YOU DID IT!!! </h1>
+        <h1> 🎊 🎉🍾🐕🐩🐶🐺🐾💰 YOU DID IT!!! </h1>
         <h2> Score: {this.props.score} </h2>
         <h2> Time: {this.props.time} </h2>
         <button onClick={() => window.location.reload()}>✖</button><br />
