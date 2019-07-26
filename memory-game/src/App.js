@@ -200,7 +200,7 @@ class App extends Component {
           cards: this.state.cards.map(card => card.id === id ? {...card, flipped: true} : {...card}),
           score: this.state.score -1
         })
-        setTimeout(() => this.timeout(), 1000)
+        setTimeout(() => this.timeout(), 750)
       }
     }
   }
